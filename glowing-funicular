@@ -1,0 +1,11 @@
+        Task { @MainActor in
+            if let maskImage = try? await backgroundRemoval.crateMask(for: image) {
+                dispatch(.changeCollage(.changeShape(
+                    .changeMedia(.changeMask(.change(maskImage))),
+                    id: id
+                )))
+            }
+        }
+    }
+    
+}
